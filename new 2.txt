@@ -1,0 +1,114 @@
+==>prerequisits
+azure account
+and a subscription
+
+1)  getting the dat from the developer team 
+a) type of application 
+b)location of code
+
+2)creating a vm:-
+a) go to portal.azure.com
+b) search for vm.
+c) create vm
+d) select the subscription type
+e) add to existing resource group or add new resource group.
+f) give virual machine name
+g) select the region 
+h) in avabality option select  avabilty zone.
+i) security type as standard 
+j) images selct the require image ubuntu ,window 
+k) keep azure spot instance unchecked
+l) in the size select the require size.
+m) authentication as password
+n) username give your username
+0) in public inbound port select on allowed port
+p)select the required ports
+click next==============
+a)in disk area proceed as it is
+click next====================
+proceed to next
+in mangment 
+a) boot dignostic  disable
+click next to advance=====>
+click next to tag section =====>
+click review and create
+
+
+2) download putty if you are using linux based machine
+
+3) connect to vm install docker .
+
+4)create a require images and install required application in the container
+
+5)copy the code to local so the there is no tampering with orginal code
+
+6) clone the repo on the local using git clone repo url
+
+7) copy paste the the code in the cloned folder
+
+8)git add . ,git commit and git push  using these three command push the code to azure repos
+
+9) check the azure repos for codes
+
+10) create agent  
+a) go to organisation setting go to agent pool section.
+b) click on add pool 
+c) go to the pool created click on new agent.
+d) either you download directly or we can download by command shell
+e) run the commands mentioned in pop up box 
+f) using power shell for windows and putty for linux set up agent by using the command specified in dialogue box
+g) ./config 
+f) add the url of the devops organisation account
+g) pat enter
+h)add token number
+h)genrate token key 
+- under user setting go to personal acess token
+- new token coopy the token 
+
+i)add user name 
+j)folder enter
+
+
+
+
+10)click on pipeline new pipline.
+
+11) under pipeline section click on pipeline.
+12)new pipline 
+13) click on classic editor
+14) select the repo where the code resides
+15)select the branch 
+16) click on continue
+17)click on empty job
+- in ajent job select the agent 
+-) add restore engine
+- add build engine
+- add vstest engine
+- we will be doing the packaging of the artifact which was genrated in build stage.
+  - we will make a zip file of this artifacts
+  
+ Release pipeline
+- create a relase pipline 
+select the empty job
+- specy the pipeline name
+- add the artifacts
+- from source option 
+- select the artifacts click add.
+-under pre deployment select for auto or manual trigger
+-  link the artiafacts
+
+--
+then add the task to perform
+adding scripting file to copy the files
+then add iis for hst the website and pool
+
+
+setting of the enivernment
+- download iis
+- set the website on with you want to host it  port number
+-  add inbound port at vm and in vertual machine same port can be accesed outside
+-  now link the packges with the webiste created
+-  open the port in the browser with server ip address
+
+
+click in the browser the ip address:port
